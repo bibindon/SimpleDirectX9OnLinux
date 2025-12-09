@@ -198,6 +198,9 @@ bool InitializeD3D(HWND windowHandle)
     // 頂点カラーをそのまま使いたいのでライティングを無効化
     g_device->SetRenderState(D3DRS_LIGHTING, FALSE);
 
+
+    g_device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+
     // ビューマトリックス（カメラ位置 (0, 0, -5) から原点を見る）
     Vector3 eyePosition = Vector3Create(0.0f, 0.0f, -5.0f);
     Vector3 targetPosition = Vector3Create(0.0f, 0.0f, 0.0f);
